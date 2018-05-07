@@ -24,5 +24,6 @@ class MainActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(savedInstanceState: Bundle?) {
         super.onRestoreInstanceState(savedInstanceState)
         TraceLog.i()
+        TraceLog.d()
     }
 }
