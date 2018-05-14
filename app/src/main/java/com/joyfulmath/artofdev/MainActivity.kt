@@ -2,12 +2,21 @@ package com.joyfulmath.artofdev
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import com.joyfulmath.artofdev.launchmode.LaunchModeDemoActivity
+import com.joyfulmath.artofdev.leetcode.Sn9
 import com.joyfulmath.artofdev.utils.TraceLog
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 class MainActivity : AppCompatActivity() {
+
+    @Inject
+    lateinit var sn9: Sn9
+
+
+    init {
+        DaggerMainActivityCompont.create().inject(this)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,6 +29,11 @@ class MainActivity : AppCompatActivity() {
         launch_btn.setOnClickListener({
             LaunchModeDemoActivity.openLaunchActivity(this)
         })
+    }
+
+    override fun onStart() {
+        super.onStart()
+        sn9.sample()
     }
 
     override fun onSaveInstanceState(savedInstanceState: Bundle?) {
