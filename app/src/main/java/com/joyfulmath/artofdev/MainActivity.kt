@@ -1,7 +1,9 @@
 package com.joyfulmath.artofdev
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.joyfulmath.artofdev.ipc.PipeLineDemoService
 import com.joyfulmath.artofdev.launchmode.LaunchModeDemoActivity
 import com.joyfulmath.artofdev.leetcode.Sn9
 import com.joyfulmath.artofdev.utils.TraceLog
@@ -27,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         launch_btn.setOnClickListener({
-            LaunchModeDemoActivity.openLaunchActivity(this)
+            startService(Intent(this,PipeLineDemoService::class.java))
         })
     }
 

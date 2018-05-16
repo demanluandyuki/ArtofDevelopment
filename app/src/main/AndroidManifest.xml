@@ -3,6 +3,7 @@
     package="com.joyfulmath.artofdev">
 
     <application
+        android:name=".ArtToDevApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,9 +17,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="6.launchmode.LaunchModeDemoActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"
-            android:process=":remote"></activity>
+        <activity android:name=".launchmode.LaunchModeDemoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"/>
+        <service android:name=".ipc.PipeLineDemoService" android:process=":remote"/>
+        <service android:name=".ipc.DemoCService" android:process=":abc"/>
     </application>
 
 </manifest>
