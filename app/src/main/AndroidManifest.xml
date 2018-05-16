@@ -16,8 +16,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".launchmode.LaunchModeDemoActivity"
-            android:configChanges="orientation|screenSize|keyboardHidden"></activity>
+        <activity android:name="6.launchmode.LaunchModeDemoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:process=":remote"></activity>
     </application>
 
 </manifest>
